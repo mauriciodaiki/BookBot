@@ -1,10 +1,13 @@
-def get_book_text(file: str) -> str:
-    with open(file) as f:
-        file_contents = f.read()
-    return file_contents
+def get_num_words(text: str) -> int:
+    words = text.split()
+    return len(words)
 
-def get_book_word_count(file: str) -> int:
-    file_contents = get_book_text(file)
-    words = file_contents.split()
-    num_words = len(words)
-    return num_words
+def character_count(text: str) -> dict[str, int]:
+    lowercase_text = text.lower()
+    characters = {}
+    for char in lowercase_text:
+        if char in characters:
+            characters[char] += 1
+        else:
+            characters[char] = 1
+    return characters
