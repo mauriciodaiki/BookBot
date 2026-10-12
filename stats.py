@@ -11,3 +11,14 @@ def character_count(text: str) -> dict[str, int]:
         else:
             characters[char] = 1
     return characters
+
+def sort_on(char: tuple[str, int]) -> int:
+    return char[1]
+
+def chars_dict_to_sorted_list(characters: dict[str, int]) -> list[tuple[str, int]]:
+    chars_list = []
+    for character in characters:
+        chars_list.append((character, characters[character]))
+    sorted_chars_list = sorted(chars_list, reverse=True, key=sort_on)
+    return sorted_chars_list
+        

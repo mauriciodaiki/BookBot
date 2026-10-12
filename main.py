@@ -1,12 +1,13 @@
-from stats import get_num_words, character_count
+from stats import get_num_words, character_count, chars_dict_to_sorted_list
 
 def main() -> None:
     book_path = "books/frankenstein.txt"
     text = get_book_text(book_path)
     num_words = get_num_words(text)
     characters = character_count(text)
+    sorted_list = chars_dict_to_sorted_list(characters)
     print(f"Found {num_words} total words")
-    print(characters)
+    print(sorted_list)
 
 def get_book_text(path: str) -> str:
     with open(path) as f:
